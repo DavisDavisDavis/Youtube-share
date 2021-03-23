@@ -26,6 +26,6 @@ mongoose.Promise = global.Promise;
     allows us to do `const ModelName = mongoose.model('ModelName');`
     in any file
 */
-require(path.join(__dirname, "../models/ModelName"));
+// require(path.join(__dirname, "../models/ModelName"));
 
 module.exports = mongoose;
