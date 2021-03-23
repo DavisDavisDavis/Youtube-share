@@ -19,7 +19,6 @@ const Main = props => {
 
         getEntries();
     }, [endpoint]);
-    console.log(entries);
 
     const addEntry = async (e, entry) => {
         e.preventDefault();

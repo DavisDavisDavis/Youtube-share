@@ -45,7 +45,7 @@ app.use((error, req, res, next) => {
 
 // Catch previously uncaught expections
 process.on('uncaughtException', (error) => {
-  console.error('Uncaught exception: ', error);
+  logger.error('Uncaught exception: ', error);
 });
 
 
