@@ -33,7 +33,7 @@ app.use((req, res, next) => {
 
 // Handle errors thrown in routes
 app.use((error, req, res, next) => {
-  logger.error(error);
+  logger.error(error.message);
 
   res.status(error.status || 500);
   res.json({

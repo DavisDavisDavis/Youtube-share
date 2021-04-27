@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import moment from "moment";
 import Cookie from "js-cookie";
-import cx from "classnames";
 import requestService from "../../utils/requestService";
 
 import {
@@ -17,8 +16,8 @@ import {
 const UserEntry = props => {
     const { _id, endpoint, name, comment, likes, youtubeId, added } = props;
 
-    const [isLiked, setIsLiked] = useState(Cookie.get(`entry-${_id}-liked`) ? true : false);
-    const [likeCount, setLikeCount] = useState(likes || 0);
+    const [isLiked, setIsLiked] = React.useState(Cookie.get(`entry-${_id}-liked`) ? true : false);
+    const [likeCount, setLikeCount] = React.useState(likes || 0);
 
     const triggerLike = async () => {
         if (!isLiked) {
