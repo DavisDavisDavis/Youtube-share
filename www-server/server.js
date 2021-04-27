@@ -7,7 +7,7 @@ const app = express();
 const cors = require('cors');
 
 // Initiate mongo config & import logging tool
-const { mongo, logger } = require(path.join(__dirname, "config"));
+const { mongo, logger } = require(path.join(__dirname, "utils"));
 
 // Cors config - allow all
 app.use(cors());
