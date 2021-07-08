@@ -26,10 +26,6 @@ const logger = createLogger({
     ]
 });
 
-process.on('uncaughtException', (error) => {
-    logger.error('Uncaught exception: ', error);
-});
-
 //
 // Logs are written like this:
 // logger.info('Hello log');
