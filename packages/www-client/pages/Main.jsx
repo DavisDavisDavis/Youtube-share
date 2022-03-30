@@ -4,7 +4,7 @@ import { MainStyled, UserEntriesStyled } from "./styled";
 import { UserEntry, EntryForm } from "../components";
 import requestService from "../utils/requestService";
 
-const Main = props => {
+const Main = (props) => {
     const { endpoint, ...rest } = props;
 
     const [entries, setEntries] = useState([]);
@@ -30,9 +30,9 @@ const Main = props => {
         setEntries([...entries, newEntry]);
     };
 
-    const removeEntry = async id => {
+    const removeEntry = async (id) => {
         await requestService.deleteRequest(`${endpoint}/entries/${id}`);
-        const remainingEntries = entries.filter(entry => entry._id !== id);
+        const remainingEntries = entries.filter((entry) => entry._id !== id);
 
         setEntries([...remainingEntries]);
     };
@@ -48,7 +48,7 @@ const Main = props => {
                                 key={i}
                                 {...entry}
                                 {...props}
-                                removeEntry={id => removeEntry(id)}
+                                removeEntry={(id) => removeEntry(id)}
                             />
                         );
                     })}
