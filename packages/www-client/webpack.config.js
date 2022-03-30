@@ -4,12 +4,12 @@ const webpack = require("webpack"); //to access built-in plugins
 
 module.exports = {
     entry: {
-        app: "./www-client/App.jsx"
+        app: "./App.jsx",
     },
 
     output: {
-        path: path.join(__dirname, "www-client/public"),
-        filename: "app.js"
+        path: path.join(__dirname, "/public"),
+        filename: "app.js",
     },
 
     module: {
@@ -18,21 +18,21 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader"
-                }
-            }
-        ]
+                    loader: "babel-loader",
+                },
+            },
+        ],
     },
 
     devtool: "source-map",
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./www-client/index.html",
-            filename: "./index.html"
-        })
+            template: "./index.html",
+            filename: "./index.html",
+        }),
     ],
     resolve: {
-        extensions: [".js", ".jsx"]
-    }
+        extensions: [".js", ".jsx"],
+    },
 };

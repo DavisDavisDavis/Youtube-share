@@ -1,6 +1,6 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 /*
     Models for making calls to database should be added here, ex:
@@ -8,7 +8,8 @@ const mongoose = require("mongoose");
 */
 
 /* Add routes here */
-// router.get('/some-route', async (req, res) => {});
+router.get("/some-route", async (req, res) => {
+    res.send("ok");
+});
 
-
-module.exports = router;
+export { router };
