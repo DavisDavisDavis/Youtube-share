@@ -4,8 +4,8 @@ class RequestService {
             const response = await fetch(endpoint, {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
-                    Accept: "application/json"
-                }
+                    Accept: "application/json",
+                },
             });
 
             return await response.json();
@@ -20,9 +20,9 @@ class RequestService {
                 method: "POST",
                 headers: {
                     "Access-Control-Allow-Origin": "*",
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
                 },
-                body: JSON.stringify(opts)
+                body: JSON.stringify(opts),
             });
 
             const data = await response.json();
@@ -38,8 +38,8 @@ class RequestService {
             const response = await fetch(endpoint, {
                 method: "DELETE",
                 headers: {
-                    "Access-Control-Allow-Origin": "*"
-                }
+                    "Access-Control-Allow-Origin": "*",
+                },
             });
 
             return await response.json();
@@ -53,8 +53,8 @@ class RequestService {
             const response = await fetch(endpoint, {
                 method: "PUT",
                 headers: {
-                    "Access-Control-Allow-Origin": "*"
-                }
+                    "Access-Control-Allow-Origin": "*",
+                },
             });
 
             return await response.json();

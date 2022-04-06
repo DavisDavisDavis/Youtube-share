@@ -10,13 +10,15 @@ import {
     UserEntryInfoStyled,
     UserEntryCommentStyled,
     UserEntryDeleteBtnStyled,
-    UserEntryLikeBtnStyled
+    UserEntryLikeBtnStyled,
 } from "./styled";
 
-const UserEntry = props => {
+const UserEntry = (props) => {
     const { _id, endpoint, name, comment, likes, youtubeId, added } = props;
 
-    const [isLiked, setIsLiked] = React.useState(Cookie.get(`entry-${_id}-liked`) ? true : false);
+    const [isLiked, setIsLiked] = React.useState(
+        Cookie.get(`entry-${_id}-liked`) ? true : false
+    );
     const [likeCount, setLikeCount] = React.useState(likes || 0);
 
     const triggerLike = async () => {
@@ -25,6 +27,7 @@ const UserEntry = props => {
                 const r = await requestService.putRequest(
                     `${endpoint}/entries/${_id}`
                 );
+
                 Cookie.set(`entry-${_id}-liked`, true);
                 setIsLiked(true);
                 setLikeCount(r.likes);

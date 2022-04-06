@@ -7,15 +7,15 @@ const EntryForm = ({ addEntry }) => {
         name: "",
         youtubeId: "",
         comment: "",
-        response: ""
+        response: "",
     });
 
-    const handleChange = e => {
+    const handleChange = (e) => {
         const inputName = e.target.getAttribute("name");
 
         setFormData({
             ...formData,
-            [inputName]: e.target.value
+            [inputName]: e.target.value,
         });
     };
 
@@ -26,7 +26,7 @@ const EntryForm = ({ addEntry }) => {
                 type="text"
                 name="name"
                 value={formData.name}
-                onChange={e => handleChange(e)}
+                onChange={(e) => handleChange(e)}
             />
 
             <label htmlFor="youtubeId">Youtube video ID</label>
@@ -34,7 +34,7 @@ const EntryForm = ({ addEntry }) => {
                 type="text"
                 name="youtubeId"
                 value={formData.youtubeId}
-                onChange={e => handleChange(e)}
+                onChange={(e) => handleChange(e)}
             />
 
             <label htmlFor="comment">Comment</label>
@@ -42,12 +42,10 @@ const EntryForm = ({ addEntry }) => {
                 type="textarea"
                 name="comment"
                 value={formData.comment}
-                onChange={e => handleChange(e)}
+                onChange={(e) => handleChange(e)}
             />
 
-            <button onClick={e => addEntry(e, formData)}>Add</button>
-
-            {/* <span class="entry-form__response">{this.state.response}</span> */}
+            <button onClick={(e) => addEntry(e, formData)}>Add</button>
         </EntryFormStyled>
     );
 };
