@@ -9,7 +9,7 @@ import mongoose from "mongoose";
 
 /* Add routes here */
 router.get("/some-route", async (req, res) => {
-    res.send("ok");
+    res.send("I'm alive");
 });
 
 export { router };
