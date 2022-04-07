@@ -25,5 +25,5 @@ app.use(morgan("tiny"));
 import { router } from "./routes/index.js";
 app.use("/", router);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Express server listening on ${PORT}`));
+const PORT = process.env.SERVER_PORT || 3000;
+app.listen(PORT, () => console.log(`Express server listening on ${PORT} ✨`));

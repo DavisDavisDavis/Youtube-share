@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
 mongoose.connect(process.env.MONGODB_URI, (error) => {
-    if (error) throw error;
+  if (error) throw error;
 
-    console.log("MongoDB connection successful");
+  console.log("MongoDB connection successful");
 });
 
 // Add NodeJS native promises to Mongoose
@@ -16,5 +16,5 @@ mongoose.Promise = global.Promise;
     in any file
 */
 // import "../models/ModelName.js";
-
+import "../models/Video.js";
 export { mongoose };
